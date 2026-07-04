@@ -6,7 +6,7 @@
 <title>청음사수 — 박성모 · 시각장애 사격 (SH-VI) 프로젝트</title>
 <meta name="description" content="청음사수는 시각장애 사격(VI Shooting) 선수 박성모의 국제 등급분류(WSPS SH-VI) 취득과 국제대회 출전을 목표로 하는 프로젝트입니다. 음향조준장치를 사용하는 10m 공기소총과 NS 파라 바이애슬론 종목을 기록합니다.">
 <meta name="author" content="청음사수 / 박성모">
-<meta name="theme-color" content="#0f1b2d">
+<meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="https://cheongeum-sasu.github.io/">
 
 <!-- Open Graph / 카카오·인스타 공유 미리보기 -->
@@ -27,7 +27,7 @@
 <meta name="twitter:description" content="음향조준장치로 조준하는 시각장애 사격. 박성모 선수의 WSPS SH-VI 국제 등급분류 취득과 국제대회 출전 기록.">
 <meta name="twitter:image" content="https://cheongeum-sasu.github.io/og-image.png">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1b2d'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23e8ecf1' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='5.5' fill='none' stroke='%23e8ecf1' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23e0533d'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23ffffff'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23222222' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%23222222' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23d24a34'/%3E%3C/svg%3E">
 
 <script type="application/ld+json">
 {
@@ -46,48 +46,50 @@
 </script>
 
 <style>
+  /* Academic project-page look (à la mobile-aloha.github.io / Nerfies template),
+     self-contained: no external fonts or frameworks. */
   :root {
     --bg: #ffffff;
-    --bg-soft: #f6f7f9;
+    --bg-soft: #f5f5f7;
     --bg-panel: #ffffff;
-    --ink: #14181f;
-    --ink-soft: #4a545f;
-    --ink-faint: #6b7580;
-    --line: #dde2e8;
-    --line-soft: #e9edf1;
-    --accent: #17416b;        /* deep navy */
-    --accent-ink: #0f2f4f;
+    --ink: #363636;
+    --ink-title: #111111;
+    --ink-soft: #4a4a4a;
+    --ink-faint: #7a7a7a;
+    --line: #dbdbdb;
+    --line-soft: #ececec;
+    --link: #3273dc;          /* academic-page blue */
+    --btn-bg: #222222;        /* dark rounded pill buttons */
+    --btn-ink: #ffffff;
     --hit: #d24a34;           /* target center */
-    --focus: #1b6fd4;
-    --maxw: 940px;
-    --radius: 12px;
+    --focus: #3273dc;
+    --maxw: 60rem;            /* hero / wide blocks */
+    --textw: 46rem;           /* reading column */
+    --radius: 14px;
   }
 
   * { box-sizing: border-box; }
 
-  html { -webkit-text-size-adjust: 100%; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
 
   body {
     margin: 0;
     background: var(--bg);
     color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo",
-      "Malgun Gothic", "Noto Sans KR", Roboto, sans-serif;
-    font-size: 17px;
-    line-height: 1.8;
-    letter-spacing: -0.003em;
+    font-family: "Google Sans", "Noto Sans KR", -apple-system, BlinkMacSystemFont,
+      "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", Roboto, sans-serif;
+    font-size: 18px;
+    line-height: 1.75;
     word-break: keep-all;
     overflow-wrap: break-word;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
-  .serif {
-    font-family: "Iowan Old Style", "Apple Garamond", Georgia, "Times New Roman",
-      "Nanum Myeongjo", serif;
-  }
-
-  a { color: var(--accent); text-decoration: none; }
+  a { color: var(--link); text-decoration: none; }
   a:hover { text-decoration: underline; }
 
   :focus-visible {
@@ -100,7 +102,7 @@
     position: absolute;
     left: 12px;
     top: -48px;
-    background: var(--accent);
+    background: var(--btn-bg);
     color: #fff;
     padding: 10px 16px;
     border-radius: 8px;
@@ -112,114 +114,115 @@
   .wrap {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: 0 22px;
+    padding: 0 24px;
+  }
+  .text {
+    max-width: var(--textw);
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  /* ---------- Header ---------- */
+  /* ---------- Hero header (centered, paper-style) ---------- */
   header.site {
     text-align: center;
-    padding: 68px 22px 40px;
-    border-bottom: 1px solid var(--line-soft);
-  }
-  .eyebrow {
-    font-size: 0.82rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-    margin: 0 0 14px;
+    padding: 72px 24px 20px;
   }
   h1.title {
-    font-size: clamp(2.3rem, 6vw, 3.5rem);
-    line-height: 1.12;
-    margin: 0 0 6px;
-    font-weight: 600;
-    letter-spacing: -0.01em;
+    font-size: clamp(2.6rem, 7vw, 4rem);
+    line-height: 1.1;
+    margin: 0 0 8px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--ink-title);
   }
   .title-en {
-    font-size: clamp(1rem, 2.6vw, 1.2rem);
-    color: var(--ink-faint);
-    font-weight: 400;
-    letter-spacing: 0.04em;
-    margin: 0 0 22px;
-  }
-  .tagline {
-    font-size: clamp(1.02rem, 2.4vw, 1.2rem);
+    font-size: clamp(1.15rem, 3vw, 1.6rem);
     color: var(--ink-soft);
-    max-width: 680px;
-    margin: 0 auto 28px;
-    line-height: 1.85;
+    font-weight: 500;
+    margin: 0 0 30px;
   }
 
-  .people {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 26px;
-    justify-content: center;
-    margin: 0 auto 8px;
-    padding: 0;
-    list-style: none;
-    max-width: 720px;
+  .authors {
+    font-size: clamp(1.05rem, 2.6vw, 1.25rem);
+    margin: 0 0 6px;
+    color: var(--ink);
   }
-  .people li { color: var(--ink); font-size: 1.02rem; }
-  .people .role {
-    display: block;
-    font-size: 0.82rem;
+  .authors a { color: var(--link); }
+  .authors .sep { color: var(--ink-faint); padding: 0 6px; }
+  .authors .tbd { color: var(--ink-faint); }
+  .affil {
+    font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+    color: var(--ink-soft);
+    margin: 0 0 4px;
+  }
+  .affil-sub {
+    font-size: 0.95rem;
     color: var(--ink-faint);
-    letter-spacing: 0.02em;
+    margin: 0 0 30px;
   }
-  .people .tbd { color: var(--ink-faint); }
 
   .links {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
     justify-content: center;
-    margin: 28px 0 0;
+    margin: 0 0 8px;
   }
   .btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 18px;
-    border: 1px solid var(--line);
+    gap: 9px;
+    padding: 11px 22px;
     border-radius: 999px;
-    background: var(--bg-soft);
-    color: var(--ink);
-    font-size: 0.96rem;
+    background: var(--btn-bg);
+    color: var(--btn-ink);
+    font-size: 0.98rem;
     font-weight: 500;
-    transition: border-color .15s, background .15s;
+    border: 1px solid var(--btn-bg);
+    transition: opacity .15s;
   }
-  .btn:hover { text-decoration: none; border-color: var(--accent); background: #eef2f6; }
+  .btn:hover { text-decoration: none; opacity: 0.82; color: var(--btn-ink); }
   .btn svg { width: 18px; height: 18px; flex: none; }
 
   /* ---------- Sections ---------- */
-  section { padding: 56px 0; border-bottom: 1px solid var(--line-soft); }
-  section:last-of-type { border-bottom: 0; }
+  section { padding: 44px 0; }
   h2 {
-    font-size: 1.55rem;
-    font-weight: 600;
+    font-size: clamp(1.7rem, 4.5vw, 2.1rem);
+    font-weight: 700;
     letter-spacing: -0.01em;
-    margin: 0 0 6px;
+    color: var(--ink-title);
+    text-align: center;
+    margin: 0 0 4px;
   }
   .section-en {
-    font-size: 0.86rem;
+    font-size: 0.88rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--ink-faint);
-    margin: 0 0 22px;
+    text-align: center;
+    margin: 0 0 28px;
   }
-  h3 { font-size: 1.1rem; margin: 26px 0 6px; line-height: 1.5; }
+  h3 { font-size: 1.15rem; color: var(--ink-title); margin: 26px 0 6px; line-height: 1.5; }
   p { margin: 0 0 18px; }
   p:last-child { margin-bottom: 0; }
-  .lead { font-size: 1.08rem; color: var(--ink); line-height: 1.85; }
-  strong { font-weight: 600; }
+  .lead { font-size: 1.06rem; line-height: 1.8; }
+  strong { font-weight: 700; color: var(--ink-title); }
   abbr { text-decoration: none; border-bottom: 1px dotted var(--ink-faint); cursor: help; }
 
-  /* ---------- Hero demo ---------- */
-  .hero {
-    padding: 44px 0 56px;
+  hr.sep {
+    border: 0;
+    border-top: 1px solid var(--line-soft);
+    max-width: var(--maxw);
+    margin: 12px auto;
+  }
+
+  /* ---------- Hero demo (teaser slot) ---------- */
+  .hero { padding: 28px 0 48px; }
+  .demo-panel {
     background: var(--bg-soft);
-    border-bottom: 1px solid var(--line-soft);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius);
+    padding: 30px 26px;
   }
   .demo {
     display: grid;
@@ -229,10 +232,11 @@
   }
   @media (max-width: 720px) {
     .demo { grid-template-columns: 1fr; gap: 24px; }
+    .demo-panel { padding: 22px 18px; }
   }
   .demo-figure {
     background: var(--bg-panel);
-    border: 1px solid var(--line);
+    border: 1px solid var(--line-soft);
     border-radius: var(--radius);
     padding: 18px;
     text-align: center;
@@ -248,9 +252,7 @@
     border-radius: 8px;
   }
   .target-stage svg { display: block; width: 100%; height: 100%; }
-  .reticle {
-    transition: transform .04s linear;
-  }
+  .reticle { transition: transform .04s linear; }
   @media (prefers-reduced-motion: reduce) {
     .reticle { transition: none; }
   }
@@ -260,9 +262,7 @@
     margin: 12px 0 0;
   }
 
-  .demo-readout {
-    text-align: left;
-  }
+  .demo-readout { text-align: left; }
   .readout-row {
     display: flex;
     align-items: baseline;
@@ -273,7 +273,7 @@
   }
   .readout-row:first-of-type { border-top: 0; }
   .readout-label { color: var(--ink-soft); font-size: 0.94rem; }
-  .readout-value { font-size: 1.5rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .readout-value { font-size: 1.5rem; font-weight: 700; color: var(--ink-title); font-variant-numeric: tabular-nums; }
   .readout-value .unit { font-size: 0.9rem; color: var(--ink-faint); font-weight: 400; margin-left: 3px; }
 
   .freq-bar {
@@ -286,7 +286,7 @@
   .freq-fill {
     height: 100%;
     width: 0%;
-    background: linear-gradient(90deg, #2c6ab0, var(--hit));
+    background: linear-gradient(90deg, var(--link), var(--hit));
     transition: width .06s linear;
   }
   @media (prefers-reduced-motion: reduce) {
@@ -298,21 +298,21 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 9px 16px;
+    padding: 9px 18px;
     border: 1px solid var(--line);
     border-radius: 999px;
-    background: #fff;
+    background: var(--bg-panel);
     color: var(--ink);
     font-size: 0.92rem;
     font-weight: 500;
     cursor: pointer;
   }
   .toggle[aria-pressed="true"] {
-    background: var(--accent);
-    color: #fff;
-    border-color: var(--accent);
+    background: var(--btn-bg);
+    color: var(--btn-ink);
+    border-color: var(--btn-bg);
   }
-  .toggle:hover { border-color: var(--accent); }
+  .toggle:hover { border-color: var(--btn-bg); }
 
   .visually-hidden {
     position: absolute !important;
@@ -327,7 +327,7 @@
   .timeline li {
     position: relative;
     padding: 0 0 32px 30px;
-    border-left: 2px solid var(--line);
+    border-left: 2px solid var(--line-soft);
   }
   .timeline li:last-child { border-left-color: transparent; padding-bottom: 0; }
   .timeline .dot {
@@ -335,12 +335,13 @@
     left: -8px; top: 3px;
     width: 14px; height: 14px;
     border-radius: 50%;
-    background: #fff;
-    border: 2px solid var(--accent);
+    background: var(--bg);
+    border: 2px solid var(--link);
   }
   .timeline .dot.goal { border-color: var(--ink-faint); background: var(--bg-soft); }
   .timeline .when {
-    font-weight: 600;
+    font-weight: 700;
+    color: var(--ink-title);
     font-variant-numeric: tabular-nums;
     display: block;
     margin-bottom: 4px;
@@ -350,7 +351,8 @@
     display: inline-block;
     font-size: 0.72rem;
     letter-spacing: 0.04em;
-    padding: 2px 9px;
+    font-weight: 500;
+    padding: 2px 10px;
     border-radius: 999px;
     vertical-align: middle;
     margin-left: 6px;
@@ -361,12 +363,11 @@
   .note {
     background: var(--bg-soft);
     border: 1px solid var(--line-soft);
-    border-left: 3px solid var(--ink-faint);
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 16px 20px;
-    font-size: 0.95rem;
+    font-size: 0.94rem;
     color: var(--ink-soft);
-    margin-top: 24px;
+    margin-top: 26px;
     line-height: 1.8;
   }
 
@@ -378,14 +379,15 @@
     margin-top: 8px;
   }
   .card {
-    border: 1px solid var(--line);
+    border: 1px solid var(--line-soft);
     border-radius: var(--radius);
-    padding: 22px;
+    padding: 24px;
     background: var(--bg-panel);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   }
   .card h3 { margin-top: 0; margin-bottom: 2px; }
   .card .en { font-size: 0.82rem; color: var(--ink-faint); letter-spacing: 0.04em; margin-bottom: 12px; }
-  .card p { font-size: 0.96rem; color: var(--ink-soft); line-height: 1.78; }
+  .card p { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.75; }
 
   /* ---------- Glossary ---------- */
   dl.glossary { margin: 0; }
@@ -393,46 +395,48 @@
     display: grid;
     grid-template-columns: 130px 1fr;
     gap: 6px 20px;
-    padding: 12px 0;
+    padding: 14px 0;
     border-top: 1px solid var(--line-soft);
   }
   dl.glossary div:first-child { border-top: 0; }
-  dl.glossary dt { font-weight: 600; }
-  dl.glossary dd { margin: 0; color: var(--ink-soft); font-size: 0.96rem; line-height: 1.75; }
-  dl.glossary div { padding: 14px 0; }
+  dl.glossary dt { font-weight: 700; color: var(--ink-title); }
+  dl.glossary dd { margin: 0; color: var(--ink-soft); font-size: 0.95rem; line-height: 1.75; }
   @media (max-width: 560px) {
     dl.glossary div { grid-template-columns: 1fr; gap: 2px; }
   }
 
   /* ---------- Footer ---------- */
   footer.site {
-    padding: 46px 22px 60px;
+    margin-top: 30px;
+    padding: 44px 24px 60px;
     text-align: center;
     color: var(--ink-faint);
     font-size: 0.9rem;
+    border-top: 1px solid var(--line-soft);
+    background: var(--bg-soft);
   }
-  footer.site .links { margin-bottom: 20px; }
+  footer.site .links { margin-bottom: 22px; }
   footer.site p { margin: 4px 0; }
 
   /* ---------- Dark mode (respect system) ---------- */
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #0f1520;
-      --bg-soft: #151d2b;
-      --bg-panel: #131b28;
-      --ink: #e9edf2;
+      --bg: #101216;
+      --bg-soft: #181b21;
+      --bg-panel: #14171c;
+      --ink: #d9dde3;
+      --ink-title: #f2f4f7;
       --ink-soft: #b3bcc7;
       --ink-faint: #8592a0;
-      --line: #2a3646;
-      --line-soft: #212c3b;
-      --accent: #6ea8e0;
-      --accent-ink: #9cc4ec;
+      --line: #333a44;
+      --line-soft: #242a32;
+      --link: #6ea8e0;
+      --btn-bg: #e9edf2;
+      --btn-ink: #14171c;
       --hit: #e0664f;
       --focus: #6ea8e0;
     }
-    .btn:hover { background: #1c2836; }
-    .toggle { background: #131b28; }
-    .toggle[aria-pressed="true"] { color: #0f1520; }
+    .card { box-shadow: none; }
     .tag.confirmed { background: #1c3527; color: #93d0a6; }
     .tag.goal { background: #33301f; color: #d8c68a; }
   }
@@ -444,26 +448,14 @@
 
 <header class="site">
   <div class="wrap">
-    <p class="eyebrow">시각장애 사격 · VI Shooting Project</p>
-    <h1 class="title serif">청음사수</h1>
-    <p class="title-en">Cheongeum Sasu — Aiming by Sound</p>
-    <p class="tagline">
-      시각장애 사격(VI Shooting)은 광학 조준경 대신 <strong>음향조준장치</strong>로 조준합니다.
-      이 프로젝트는 박성모 선수의 국제 등급분류(<abbr title="World Shooting Para Sport">WSPS</abbr> SH-VI) 취득과
-      국제대회 출전 과정을 사실 그대로 기록합니다.
-    </p>
+    <h1 class="title">청음사수</h1>
+    <p class="title-en">Cheongeum Sasu: Aiming by Sound — VI Shooting (SH-VI) Project</p>
 
-    <ul class="people">
-      <li>
-        박성모 <span class="role">사수 · Shooter (SH-VI, 저시력)</span>
-      </li>
-      <li class="tbd">
-        부사수 미정 <span class="role">VI Assistant · TBD</span>
-      </li>
-      <li>
-        10m 공기소총 · NS 파라 바이애슬론 <span class="role">종목 · Events</span>
-      </li>
-    </ul>
+    <p class="authors">
+      <a href="https://www.instagram.com/lucid_mo" target="_blank" rel="noopener">박성모</a><span class="sep">·</span><span class="tbd">부사수 미정 (VI Assistant, TBD)</span>
+    </p>
+    <p class="affil">시각장애 사격 · 10m 공기소총 (SH-VI) / NS 파라 바이애슬론</p>
+    <p class="affil-sub">WSPS SH-VI 국제 등급분류 취득 및 국제대회 출전 프로젝트</p>
 
     <nav class="links" aria-label="소셜 링크">
       <a class="btn" href="https://www.instagram.com/lucid_mo" target="_blank" rel="noopener">
@@ -487,91 +479,93 @@
 
 <main id="main">
 
-  <!-- ===== Hero: interactive acoustic-aiming demo ===== -->
+  <!-- ===== Hero: interactive acoustic-aiming demo (teaser) ===== -->
   <section class="hero" aria-labelledby="demo-title">
     <div class="wrap">
-      <h2 id="demo-title">음향조준 원리 데모 <span class="visually-hidden">(인터랙티브)</span></h2>
-      <p class="section-en">How acoustic aiming works</p>
-      <p class="lead" style="max-width:720px;">
-        표적 위에서 조준점을 움직여 보세요. <strong>표적 중심에 가까울수록 조준음의 주파수가 높아집니다.</strong>
-        실제 시각장애 사격에서 사수는 이 소리만으로 조준해 격발합니다.
-      </p>
+      <div class="demo-panel">
+        <h2 id="demo-title" style="font-size:1.35rem;text-align:left;">음향조준 원리 데모 <span class="visually-hidden">(인터랙티브)</span></h2>
+        <p class="section-en" style="text-align:left;">How acoustic aiming works</p>
+        <p class="lead" style="max-width:720px;">
+          표적 위에서 조준점을 움직여 보세요. <strong>표적 중심에 가까울수록 조준음의 주파수가 높아집니다.</strong>
+          실제 시각장애 사격에서 사수는 이 소리만으로 조준해 격발합니다.
+        </p>
 
-      <div class="demo">
-        <!-- Target -->
-        <figure class="demo-figure" style="margin:0;">
-          <div
-            class="target-stage"
-            id="stage"
-            role="slider"
-            tabindex="0"
-            aria-label="조준 표적. 방향키로 조준점을 움직이면 표적 중심과의 거리에 따라 주파수가 바뀝니다."
-            aria-valuemin="0"
-            aria-valuemax="100"
-            aria-valuenow="0"
-            aria-valuetext="조준점이 표적 밖에 있습니다.">
-            <svg viewBox="0 0 200 200" aria-hidden="true">
-              <rect width="200" height="200" fill="transparent"/>
-              <circle cx="100" cy="100" r="94" fill="none" stroke="var(--line)" stroke-width="1.2"/>
-              <circle cx="100" cy="100" r="74" fill="none" stroke="var(--line)" stroke-width="1.2"/>
-              <circle cx="100" cy="100" r="54" fill="none" stroke="var(--line)" stroke-width="1.2"/>
-              <circle cx="100" cy="100" r="34" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.6"/>
-              <circle cx="100" cy="100" r="16" fill="none" stroke="var(--hit)" stroke-width="1.4"/>
-              <circle cx="100" cy="100" r="3.5" fill="var(--hit)"/>
-              <g class="reticle" id="reticle" transform="translate(100,100)" opacity="0">
-                <circle r="9" fill="none" stroke="#111" stroke-width="1.6" style="paint-order:stroke;"/>
-                <circle r="9" fill="none" stroke="#fff" stroke-width="3.4" opacity="0.55"/>
-                <circle r="9" fill="none" stroke="var(--accent)" stroke-width="1.6"/>
-                <line x1="-14" y1="0" x2="-4" y2="0" stroke="var(--accent)" stroke-width="1.6"/>
-                <line x1="4" y1="0" x2="14" y2="0" stroke="var(--accent)" stroke-width="1.6"/>
-                <line x1="0" y1="-14" x2="0" y2="-4" stroke="var(--accent)" stroke-width="1.6"/>
-                <line x1="0" y1="4" x2="0" y2="14" stroke="var(--accent)" stroke-width="1.6"/>
-              </g>
-            </svg>
+        <div class="demo" style="margin-top:24px;">
+          <!-- Target -->
+          <figure class="demo-figure" style="margin:0;">
+            <div
+              class="target-stage"
+              id="stage"
+              role="slider"
+              tabindex="0"
+              aria-label="조준 표적. 방향키로 조준점을 움직이면 표적 중심과의 거리에 따라 주파수가 바뀝니다."
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+              aria-valuetext="조준점이 표적 밖에 있습니다.">
+              <svg viewBox="0 0 200 200" aria-hidden="true">
+                <rect width="200" height="200" fill="transparent"/>
+                <circle cx="100" cy="100" r="94" fill="none" stroke="var(--line)" stroke-width="1.2"/>
+                <circle cx="100" cy="100" r="74" fill="none" stroke="var(--line)" stroke-width="1.2"/>
+                <circle cx="100" cy="100" r="54" fill="none" stroke="var(--line)" stroke-width="1.2"/>
+                <circle cx="100" cy="100" r="34" fill="none" stroke="var(--link)" stroke-width="1.2" opacity="0.6"/>
+                <circle cx="100" cy="100" r="16" fill="none" stroke="var(--hit)" stroke-width="1.4"/>
+                <circle cx="100" cy="100" r="3.5" fill="var(--hit)"/>
+                <g class="reticle" id="reticle" transform="translate(100,100)" opacity="0">
+                  <circle r="9" fill="none" stroke="#111" stroke-width="1.6" style="paint-order:stroke;"/>
+                  <circle r="9" fill="none" stroke="#fff" stroke-width="3.4" opacity="0.55"/>
+                  <circle r="9" fill="none" stroke="var(--link)" stroke-width="1.6"/>
+                  <line x1="-14" y1="0" x2="-4" y2="0" stroke="var(--link)" stroke-width="1.6"/>
+                  <line x1="4" y1="0" x2="14" y2="0" stroke="var(--link)" stroke-width="1.6"/>
+                  <line x1="0" y1="-14" x2="0" y2="-4" stroke="var(--link)" stroke-width="1.6"/>
+                  <line x1="0" y1="4" x2="0" y2="14" stroke="var(--link)" stroke-width="1.6"/>
+                </g>
+              </svg>
+            </div>
+            <figcaption class="demo-hint" id="demo-hint">
+              마우스·터치로 조준하거나, 표적을 선택한 뒤 방향키를 사용하세요.
+            </figcaption>
+          </figure>
+
+          <!-- Readout -->
+          <div class="demo-readout">
+            <div class="readout-row">
+              <span class="readout-label">조준음 주파수 <span class="section-en" style="display:inline;letter-spacing:.06em;text-align:left;">Tone frequency</span></span>
+              <span class="readout-value"><span id="freq-val">—</span><span class="unit">Hz</span></span>
+            </div>
+            <div class="freq-bar" aria-hidden="true"><span class="freq-fill" id="freq-fill"></span></div>
+
+            <div class="readout-row">
+              <span class="readout-label">중심까지 거리 <span class="section-en" style="display:inline;letter-spacing:.06em;text-align:left;">Distance to center</span></span>
+              <span class="readout-value" style="font-size:1.15rem;"><span id="dist-val">—</span></span>
+            </div>
+
+            <div class="demo-controls">
+              <button type="button" class="toggle" id="sound-toggle" aria-pressed="false">
+                <span aria-hidden="true">🔈</span>
+                <span id="sound-label">소리 켜기 (Sound on)</span>
+              </button>
+            </div>
+
+            <p class="demo-hint" style="margin-top:16px;">
+              소리는 기본적으로 꺼져 있습니다. 켜면 브라우저에서 조준음을 재생합니다.
+              헤드폰 사용을 권장합니다.
+            </p>
+
+            <!-- Live region for screen readers -->
+            <p class="visually-hidden" id="demo-live" aria-live="polite"></p>
           </div>
-          <figcaption class="demo-hint" id="demo-hint">
-            마우스·터치로 조준하거나, 표적을 선택한 뒤 방향키를 사용하세요.
-          </figcaption>
-        </figure>
-
-        <!-- Readout -->
-        <div class="demo-readout">
-          <div class="readout-row">
-            <span class="readout-label">조준음 주파수 <span class="section-en" style="display:inline;letter-spacing:.06em;">Tone frequency</span></span>
-            <span class="readout-value"><span id="freq-val">—</span><span class="unit">Hz</span></span>
-          </div>
-          <div class="freq-bar" aria-hidden="true"><span class="freq-fill" id="freq-fill"></span></div>
-
-          <div class="readout-row">
-            <span class="readout-label">중심까지 거리 <span class="section-en" style="display:inline;letter-spacing:.06em;">Distance to center</span></span>
-            <span class="readout-value" style="font-size:1.15rem;"><span id="dist-val">—</span></span>
-          </div>
-
-          <div class="demo-controls">
-            <button type="button" class="toggle" id="sound-toggle" aria-pressed="false">
-              <span aria-hidden="true">🔈</span>
-              <span id="sound-label">소리 켜기 (Sound on)</span>
-            </button>
-          </div>
-
-          <p class="demo-hint" style="margin-top:16px;">
-            소리는 기본적으로 꺼져 있습니다. 켜면 브라우저에서 조준음을 재생합니다.
-            헤드폰 사용을 권장합니다.
-          </p>
-
-          <!-- Live region for screen readers -->
-          <p class="visually-hidden" id="demo-live" aria-live="polite"></p>
         </div>
-      </div>
 
-      <!-- Fallback / text alternative: always present, page is complete without JS/audio -->
-      <p class="note" style="margin-top:32px;">
-        <strong>대체 설명.</strong> 음향조준장치(Ecoaims VIS500 기준)는 총열에 장착된 카메라 센서가
-        표적에 설치된 적외선 LED를 감지해, 조준점과 표적 중심 사이의 거리를 실시간으로 소리의 높낮이로 바꿉니다.
-        총구가 정중앙에 가까울수록 높은 음이, 멀어질수록 낮은 음이 이어폰으로 전달되며,
-        중심에 매우 가까워지면 소리가 단속음(끊어지는 음)으로 바뀝니다. 사수는 소리가 가장 높아지는 지점을 찾아
-        조준을 고정하고 격발합니다. 이 데모가 재생되지 않아도 실제 원리는 동일합니다.
-      </p>
+        <!-- Fallback / text alternative: always present, page is complete without JS/audio -->
+        <p class="note" style="margin-top:28px;">
+          <strong>대체 설명.</strong> 음향조준장치(Ecoaims VIS500 기준)는 총열에 장착된 카메라 센서가
+          표적에 설치된 적외선 LED를 감지해, 조준점과 표적 중심 사이의 거리를 실시간으로 소리의 높낮이로 바꿉니다.
+          총구가 정중앙에 가까울수록 높은 음이, 멀어질수록 낮은 음이 이어폰으로 전달되며,
+          중심에 매우 가까워지면 소리가 단속음(끊어지는 음)으로 바뀝니다. 사수는 소리가 가장 높아지는 지점을 찾아
+          조준을 고정하고 격발합니다. 이 데모가 재생되지 않아도 실제 원리는 동일합니다.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -580,23 +574,27 @@
     <div class="wrap">
       <h2 id="about-title">개요</h2>
       <p class="section-en">Abstract</p>
-      <p class="lead">
-        시각장애 사격(<abbr title="Visually Impaired">VI</abbr> Shooting)은 광학 조준경 대신 음향조준장치를
-        사용하는 파라스포츠 종목입니다. 총구가 표적 중심에 가까울수록 조준음의 주파수가 높아지고,
-        사수는 청각으로 조준을 잡아 격발합니다.
-      </p>
-      <p>
-        현재 한국에는 시각장애 사격의 <strong>국내 등급분류 제도가 아직 없습니다.</strong>
-        이 프로젝트는 국제 등급분류(<abbr title="World Shooting Para Sport">WSPS</abbr> SH-VI)를 연맹 협조로
-        취득하는 것을 우선 과제로 삼으며, 2027년 <abbr title="제4회 WSPS 그랑프리">IDECUP</abbr> 현장 세션을
-        가장 유력한 취득 기회로 보고 준비하고 있습니다.
-      </p>
-      <p>
-        목표는 <strong>대한민국 최초의 WSPS SH-VI 국제 등급분류 취득 및 국제대회 출전</strong>입니다.
-        이 페이지는 감상이 아니라, 검증 가능한 일정과 장비, 진행 상황을 기록하기 위한 것입니다.
-      </p>
+      <div class="text">
+        <p class="lead">
+          시각장애 사격(<abbr title="Visually Impaired">VI</abbr> Shooting)은 광학 조준경 대신 음향조준장치를
+          사용하는 파라스포츠 종목입니다. 총구가 표적 중심에 가까울수록 조준음의 주파수가 높아지고,
+          사수는 청각으로 조준을 잡아 격발합니다.
+        </p>
+        <p>
+          현재 한국에는 시각장애 사격의 <strong>국내 등급분류 제도가 아직 없습니다.</strong>
+          이 프로젝트는 국제 등급분류(<abbr title="World Shooting Para Sport">WSPS</abbr> SH-VI)를 연맹 협조로
+          취득하는 것을 우선 과제로 삼으며, 2027년 <abbr title="제4회 WSPS 그랑프리">IDECUP</abbr> 현장 세션을
+          가장 유력한 취득 기회로 보고 준비하고 있습니다.
+        </p>
+        <p>
+          목표는 <strong>대한민국 최초의 WSPS SH-VI 국제 등급분류 취득 및 국제대회 출전</strong>입니다.
+          이 페이지는 감상이 아니라, 검증 가능한 일정과 장비, 진행 상황을 기록하기 위한 것입니다.
+        </p>
+      </div>
     </div>
   </section>
+
+  <hr class="sep">
 
   <!-- ===== Discipline ===== -->
   <section aria-labelledby="disc-title">
@@ -606,10 +604,11 @@
       <div class="cards">
         <article class="card">
           <h3>10m 공기소총 (SH-VI)</h3>
-          <p class="en">10m Air Rifle · Standing</p>
+          <p class="en">10m Air Rifle · VIS (Standing) / VIP (Prone)</p>
           <p>
             10m 거리의 실내 공기소총 종목입니다. 시각장애 사수는 음향조준장치를 통해 청각으로 조준하며,
             등급분류 코드 <abbr title="시각장애 사격 등급분류">SH-VI</abbr>로 분류됩니다.
+            종목은 입사(VIS)와 복사(VIP) 두 가지입니다.
           </p>
         </article>
         <article class="card">
@@ -624,61 +623,164 @@
     </div>
   </section>
 
+  <hr class="sep">
+
+  <!-- ===== Rules ===== -->
+  <section aria-labelledby="rules-title">
+    <div class="wrap">
+      <h2 id="rules-title">경기 규정</h2>
+      <p class="section-en">Competition Rules</p>
+      <div class="text">
+
+        <h3 style="margin-top:0;">10m 공기소총 — WSPS 규정 요약</h3>
+        <p>
+          시각장애 사격은 2019년 <abbr title="International Blind Sports Federation">IBSA</abbr>에서
+          <abbr title="World Shooting Para Sport">WSPS</abbr>로 관할이 이관되어, 현재 WSPS 기술규정과
+          등급분류 규정의 적용을 받습니다.
+        </p>
+        <ul style="padding-left:1.2em;">
+          <li style="margin-bottom:12px;">
+            <strong>단일 클래스 SH-VI.</strong> 시각장애 선수는 잔존 시력 정도와 관계없이 전원
+            <strong>SH-VI 한 클래스</strong>에서 경쟁합니다. 종목은 입사
+            <abbr title="10m Air Rifle Standing SH-VI">VIS</abbr>(서서 쏨)와 복사
+            <abbr title="10m Air Rifle Prone SH-VI">VIP</abbr>(엎드려 쏨에 해당하는 좌식 자세) 두 가지이며,
+            국제대회에서는 통상 남녀 혼성(Mixed) 이벤트로 치러집니다.
+          </li>
+          <li style="margin-bottom:12px;">
+            <strong>등급분류 자격 기준.</strong> SH-VI 출전 자격을 얻으려면 국제 등급분류에서
+            시각장애 최소 기준을 충족해야 합니다 — 교정 후 좋은 쪽 눈 기준
+            <strong>시력(VA)이 logMAR 1.0보다 나쁘거나</strong>(약 6/60 · 20/200 상당),
+            <strong>시야(VF) 반경 20° 미만</strong>. 판정은 국제 등급분류관(안과 평가 포함)이 수행하며,
+            세부 기준과 절차는 WSPS 등급분류 규정(Classification Rules and Regulations) 원문이 기준입니다.
+          </li>
+          <li style="margin-bottom:12px;">
+            <strong>경기 방식.</strong> 예선은 10개 동심원 링 표적에 <strong>60발</strong>을 사격하고,
+            상위 선수가 결선에 진출하는 예선–결선 구조입니다.
+            복사(VIP)는 스툴에 앉아 <strong>지름 90cm 미만의 테이블</strong>에 팔과 소총을 받치고 사격하고,
+            입사(VIS)는 선 자세로 소총 무게를 선수 스스로 지탱합니다.
+          </li>
+          <li style="margin-bottom:12px;">
+            <strong>조준.</strong> 광학 조준 대신 <strong>승인된 음향조준장치</strong>로 조준합니다.
+            조준점이 표적 중심에 가까워질수록 헤드폰으로 전달되는 조준음의 음높이가 올라갑니다.
+            Ecoaims VIS500은 WSPS(IPC)·IBSA 승인 장비로, 표적 중심 아래 약 60mm에 설치된
+            적외선 LED를 총열의 카메라 센서가 감지하는 방식이며 공기소총 전용입니다.
+            장비는 대회 시 장비 검사(Equipment Control)를 통과해야 합니다.
+          </li>
+          <li>
+            <strong>부사수(어시스턴트).</strong> 규정상 선수 1인당 <strong>어시스턴트(로더) 1인이 허용</strong>됩니다.
+            어시스턴트는 장전을 돕고, 선수가 자기 사로의 표적을 올바르게 향하고 있는지
+            정보를 제공할 수 있습니다. <strong>조준과 격발은 선수 본인이 소리에만 의지해 수행합니다.</strong>
+          </li>
+        </ul>
+
+        <h3>NS 파라 바이애슬론 — IBU 규정 요약</h3>
+        <p>
+          파라 바이애슬론은 국제바이애슬론연맹(<abbr title="International Biathlon Union">IBU</abbr>)이 관장하며,
+          크로스컨트리 스키(프리 테크닉)와 10m 사격을 결합한 동계 종목입니다.
+        </p>
+        <ul style="padding-left:1.2em;">
+          <li style="margin-bottom:12px;">
+            <strong>시각장애 클래스 B1–B3.</strong> 시각장애 선수는 장애 정도에 따라
+            B1(전맹~형태 인지 불가) · B2(중증 저시력) · B3(중등도 저시력)로 분류됩니다.
+            <strong>B1은 가이드 러너가 의무</strong>이며, B2·B3는 가이드 동반을 선택할 수 있습니다.
+          </li>
+          <li style="margin-bottom:12px;">
+            <strong>소총 미휴대.</strong> 올림픽 바이애슬론과 달리 소총을 메고 스키를 타지 않습니다.
+            소총은 사대에 보관되며, <strong>시각장애 클래스는 전 선수가 동일한 표준화 소총</strong>을
+            사대에 거치된 상태로 사용합니다.
+          </li>
+          <li style="margin-bottom:12px;">
+            <strong>사격.</strong> 사거리 10m, 프론(엎드린) 자세, 라운드당 5개 표적.
+            공기(또는 CO2) 소총에 5발 클립을 사용하며, 시각장애 클래스의 표적 지름은
+            <strong>21mm</strong>입니다(신체장애 LW 클래스는 13mm). 시각장애 선수는
+            전자음향 소총의 헤드셋 신호음으로 청각 조준합니다.
+          </li>
+          <li style="margin-bottom:12px;">
+            <strong>페널티.</strong> 놓친 표적 1개당 <strong>1분 가산 또는 페널티 루프 주행</strong>이
+            부과됩니다(대회 형식에 따라 다름).
+          </li>
+          <li>
+            <strong>기록 산정.</strong> 장애 유형·등급별 <strong>퍼센티지(타임 팩터) 시스템</strong>으로
+            주행 기록을 환산하여, 환산 기록이 가장 빠른 선수가 우승합니다.
+          </li>
+        </ul>
+
+        <p class="note">
+          위 내용은 공개된 국제 규정·공식 자료의 <strong>요약</strong>입니다. 규정은 개정될 수 있으며,
+          실제 대회 참가 시에는
+          <a href="https://www.paralympic.org/shooting/rules" target="_blank" rel="noopener">WSPS 기술규정·등급분류 규정</a> 및
+          <a href="https://www.biathlonworld.com/inside-ibu/para-biathlon" target="_blank" rel="noopener">IBU 파라 바이애슬론 규정</a>
+          최신 원문이 우선합니다. 근거 자료 ·
+          <a href="https://www.paralympic.org/shooting/vision-impaired" target="_blank" rel="noopener">WSPS Vision Impaired</a>,
+          <a href="https://www.paralympic.org/biathlon" target="_blank" rel="noopener">Para Biathlon (IPC)</a>,
+          <a href="https://www.ecoaims.com/products/para-sport/vis500-aiming-device-set/" target="_blank" rel="noopener">Ecoaims VIS500</a>,
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6684738/" target="_blank" rel="noopener">Allen et al., <em>Frontiers in Psychology</em> (2019)</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="sep">
+
   <!-- ===== Roadmap ===== -->
   <section aria-labelledby="road-title">
     <div class="wrap">
       <h2 id="road-title">로드맵</h2>
       <p class="section-en">Roadmap</p>
-      <ol class="timeline">
-        <li>
-          <span class="dot"></span>
-          <span class="when">2026</span>
-          <span class="what">
-            장비 구축(Anschütz 9015 / Ecoaims VIS500), 총기 소지허가 절차, 기초 훈련.
-          </span>
-        </li>
-        <li>
-          <span class="dot"></span>
-          <span class="when">
-            2027.05.05 – 05.09 · <abbr title="제4회 WSPS 그랑프리">IDECUP</abbr>
-            <span class="tag confirmed">일정 확정</span>
-          </span>
-          <span class="what">
-            제4회 WSPS 그랑프리 (독일 랑엘스하임, Langelsheim). 첫 국제대회이자
-            현장 <abbr title="시각장애 사격 등급분류">SH-VI</abbr> 등급분류 취득 목표.
-          </span>
-        </li>
-        <li>
-          <span class="dot"></span>
-          <span class="when">
-            2028.09.17 – 09.24
-            <span class="tag confirmed">일정 확정</span>
-          </span>
-          <span class="what">
-            제1회 시각장애 사격 단독 세계선수권 (독일 랑엘스하임).
-            <abbr title="World Shooting Para Sport">WSPS</abbr>가 2028년부터 신설한 시각장애 사격만의
-            독립 세계선수권으로, IDECUP e.V.가 주관.
-          </span>
-        </li>
-        <li>
-          <span class="dot goal"></span>
-          <span class="when">
-            2030
-            <span class="tag goal">장기 목표</span>
-          </span>
-          <span class="what">
-            프렌치 알프스 동계 패럴림픽 — NS 파라 바이애슬론. 장기 목표.
-          </span>
-        </li>
-      </ol>
+      <div class="text">
+        <ol class="timeline">
+          <li>
+            <span class="dot"></span>
+            <span class="when">2026</span>
+            <span class="what">
+              장비 구축(Anschütz 9015 / Ecoaims VIS500), 총기 소지허가 절차, 기초 훈련.
+            </span>
+          </li>
+          <li>
+            <span class="dot"></span>
+            <span class="when">
+              2027.05.05 – 05.09 · <abbr title="제4회 WSPS 그랑프리">IDECUP</abbr>
+              <span class="tag confirmed">일정 확정</span>
+            </span>
+            <span class="what">
+              제4회 WSPS 그랑프리 (독일 랑엘스하임, Langelsheim). 첫 국제대회이자
+              현장 <abbr title="시각장애 사격 등급분류">SH-VI</abbr> 등급분류 취득 목표.
+            </span>
+          </li>
+          <li>
+            <span class="dot"></span>
+            <span class="when">
+              2028.09.17 – 09.24
+              <span class="tag confirmed">일정 확정</span>
+            </span>
+            <span class="what">
+              제1회 시각장애 사격 단독 세계선수권 (독일 랑엘스하임).
+              <abbr title="World Shooting Para Sport">WSPS</abbr>가 2028년부터 신설한 시각장애 사격만의
+              독립 세계선수권으로, IDECUP e.V.가 주관.
+            </span>
+          </li>
+          <li>
+            <span class="dot goal"></span>
+            <span class="when">
+              2030
+              <span class="tag goal">장기 목표</span>
+            </span>
+            <span class="what">
+              프렌치 알프스 동계 패럴림픽 — NS 파라 바이애슬론. 장기 목표.
+            </span>
+          </li>
+        </ol>
 
-      <p class="note">
-        위 일정은 <strong>목표이며 확정 출전이 아닙니다.</strong> 현재 국제 등급분류(WSPS SH-VI)를
-        아직 보유하고 있지 않으며, 출전 자격은 등급분류 취득과 각 대회의 참가 요건 충족을 전제로 합니다.
-        일정 표기 중 “일정 확정”은 <em>대회 개최 일정</em>이 확정되었다는 의미이며, 출전 확정을 뜻하지 않습니다.
-      </p>
+        <p class="note">
+          위 일정은 <strong>목표이며 확정 출전이 아닙니다.</strong> 현재 국제 등급분류(WSPS SH-VI)를
+          아직 보유하고 있지 않으며, 출전 자격은 등급분류 취득과 각 대회의 참가 요건 충족을 전제로 합니다.
+          일정 표기 중 “일정 확정”은 <em>대회 개최 일정</em>이 확정되었다는 의미이며, 출전 확정을 뜻하지 않습니다.
+        </p>
+      </div>
     </div>
   </section>
+
+  <hr class="sep">
 
   <!-- ===== Equipment ===== -->
   <section aria-labelledby="equip-title">
@@ -714,6 +816,8 @@
     </div>
   </section>
 
+  <hr class="sep">
+
   <!-- ===== Team ===== -->
   <section aria-labelledby="team-title">
     <div class="wrap">
@@ -722,60 +826,78 @@
       <div class="cards">
         <article class="card">
           <h3>박성모</h3>
-          <p class="en">사수 · Shooter (SH-VI, 저시력)</p>
+          <p class="en">사수 · Shooter (SH-VI 대상, 저시력)</p>
           <p>
-            시각장애 사격 선수. 저시력 등급으로 WSPS SH-VI 등급분류를 대상으로 하며,
-            10m 공기소총과 NS 파라 바이애슬론을 준비합니다.
+            시각장애 사격 선수(저시력). 경기에서는 음향조준장치의 조준음만으로 조준하고 격발합니다.
+            1차 목표는 WSPS 국제 등급분류에서 시각장애 최소 기준
+            (시력 logMAR 1.0보다 나쁨 또는 시야 반경 20° 미만) 충족을 국제 등급분류관에게
+            평가받아 <strong>SH-VI 자격을 취득</strong>하는 것이며, 이후 10m 공기소총(VIS·VIP)과
+            NS 파라 바이애슬론 국제대회 출전을 준비합니다.
           </p>
         </article>
         <article class="card">
           <h3>부사수 <span style="color:var(--ink-faint);font-weight:400;">(미정)</span></h3>
-          <p class="en">VI Assistant · TBD</p>
+          <p class="en">VI Assistant (Loader) · TBD</p>
           <p>
-            시각장애 사격에서 사수를 보조하는 역할. 현재 인원은 확정되지 않았습니다.
-            (부사수 미정)
+            WSPS 규정이 선수 1인당 1인 허용하는 어시스턴트(로더).
+            <strong>장전을 돕고, 선수가 자기 사로의 표적을 올바르게 향하고 있는지 정보를 제공</strong>하는
+            역할로, 조준과 격발에는 개입하지 않습니다. 파라 바이애슬론에서는 별도로
+            클래스에 따라 가이드 러너가 함께합니다(B1 의무, B2·B3 선택).
+            현재 인원은 확정되지 않았습니다.
           </p>
         </article>
       </div>
     </div>
   </section>
 
+  <hr class="sep">
+
   <!-- ===== Glossary ===== -->
   <section aria-labelledby="glo-title">
     <div class="wrap">
       <h2 id="glo-title">용어</h2>
       <p class="section-en">Glossary</p>
-      <dl class="glossary">
-        <div>
-          <dt>WSPS</dt>
-          <dd>World Shooting Para Sport. 국제 패럴림픽 사격을 관장하는 기구·종목 체계.</dd>
-        </div>
-        <div>
-          <dt>SH-VI</dt>
-          <dd>시각장애 사격 등급분류(Visually Impaired). 음향조준장치를 사용하는 선수 분류.</dd>
-        </div>
-        <div>
-          <dt>IDECUP</dt>
-          <dd>제4회 WSPS 그랑프리 대회명 (2027년, 독일 랑엘스하임 개최).</dd>
-        </div>
-        <div>
-          <dt>VI Shooting</dt>
-          <dd>시각장애 사격. 광학 조준 대신 음향조준으로 경기하는 파라스포츠 종목.</dd>
-        </div>
-        <div>
-          <dt>등급분류</dt>
-          <dd>Classification. 장애 정도에 따라 경기 종목·클래스를 배정하는 국제 절차.</dd>
-        </div>
-      </dl>
+      <div class="text">
+        <dl class="glossary">
+          <div>
+            <dt>WSPS</dt>
+            <dd>World Shooting Para Sport. 국제 패럴림픽 사격을 관장하는 기구·종목 체계.</dd>
+          </div>
+          <div>
+            <dt>SH-VI</dt>
+            <dd>시각장애 사격 등급분류(Visually Impaired). 음향조준장치를 사용하는 선수 분류.</dd>
+          </div>
+          <div>
+            <dt>IDECUP</dt>
+            <dd>제4회 WSPS 그랑프리 대회명 (2027년, 독일 랑엘스하임 개최).</dd>
+          </div>
+          <div>
+            <dt>VIS / VIP</dt>
+            <dd>SH-VI 종목 코드. VIS는 10m 공기소총 입사(Standing), VIP는 복사(Prone). 국제대회에서 통상 혼성으로 운영.</dd>
+          </div>
+          <div>
+            <dt>B1 · B2 · B3</dt>
+            <dd>파라 바이애슬론 등 동계 종목의 시각장애 클래스. B1(전맹~형태 인지 불가), B2(중증 저시력), B3(중등도 저시력).</dd>
+          </div>
+          <div>
+            <dt>VI Shooting</dt>
+            <dd>시각장애 사격. 광학 조준 대신 음향조준으로 경기하는 파라스포츠 종목.</dd>
+          </div>
+          <div>
+            <dt>등급분류</dt>
+            <dd>Classification. 장애 정도에 따라 경기 종목·클래스를 배정하는 국제 절차.</dd>
+          </div>
+        </dl>
 
-      <p class="note">
-        참고 자료 ·
-        <a href="https://www.paralympic.org/shooting" target="_blank" rel="noopener">World Shooting Para Sport</a>,
-        <a href="https://ksfd.kosad.kr/" target="_blank" rel="noopener">대한장애인사격연맹</a>,
-        <a href="https://www.idecup.eu/" target="_blank" rel="noopener">IDECUP</a>,
-        <a href="https://www.ecoaims.com/products/para-sport/vis500-aiming-device-set/" target="_blank" rel="noopener">Ecoaims VIS500</a>,
-        <a href="https://www.anschuetz-sport.com/en/sport/luftgewehre/luftgewehr-disziplinen/basismodelle-9015-disziplin-frei/" target="_blank" rel="noopener">Anschütz 9015</a>.
-      </p>
+        <p class="note">
+          참고 자료 ·
+          <a href="https://www.paralympic.org/shooting" target="_blank" rel="noopener">World Shooting Para Sport</a>,
+          <a href="https://ksfd.kosad.kr/" target="_blank" rel="noopener">대한장애인사격연맹</a>,
+          <a href="https://www.idecup.eu/" target="_blank" rel="noopener">IDECUP</a>,
+          <a href="https://www.ecoaims.com/products/para-sport/vis500-aiming-device-set/" target="_blank" rel="noopener">Ecoaims VIS500</a>,
+          <a href="https://www.anschuetz-sport.com/en/sport/luftgewehre/luftgewehr-disziplinen/basismodelle-9015-disziplin-frei/" target="_blank" rel="noopener">Anschütz 9015</a>.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -800,7 +922,7 @@
         YouTube
       </a>
     </nav>
-    <p class="serif" style="font-size:1.05rem;color:var(--ink-soft);">청음사수 · Cheongeum Sasu</p>
+    <p style="font-size:1.05rem;color:var(--ink-soft);font-weight:700;">청음사수 · Cheongeum Sasu</p>
     <p>시각장애 사격 (SH-VI) 프로젝트 — 박성모</p>
     <p>@lucid_mo</p>
   </div>
