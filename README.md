@@ -24,7 +24,10 @@
 | 파일 | 설명 |
 | --- | --- |
 | `index.html` | 랜딩페이지 본문. CSS·JS 인라인, 외부 라이브러리 없음. |
-| `og-image.png` | 카카오·인스타 등 공유 미리보기용 Open Graph 이미지 (1200×630). |
+| `og-image.png` | 공유 미리보기용 Open Graph 이미지 (1200×630). 과녁 아이콘 단일 디자인. |
+| `favicon.svg` | 과녁 파비콘 (벡터, 기본). |
+| `favicon-96.png` | 과녁 파비콘 (96×96 PNG). 구글 검색결과 파비콘 노출용(48px 배수). |
+| `apple-touch-icon.png` | iOS 홈 화면 아이콘 (180×180). |
 | `sitemap.xml` | 검색엔진용 사이트맵. |
 | `robots.txt` | 크롤러 정책 + 사이트맵 위치. |
 | `README.md` | 이 문서. |
@@ -40,7 +43,8 @@
   - 데모는 키보드(방향키/Home)로 조작 가능하고 `role="slider"`와 `aria-live`로 상태를 읽어줍니다.
   - `prefers-reduced-motion` 대응, 라이트/다크 모드 모두 충분한 명도 대비.
   - **데모 없이도 페이지가 완결됩니다** — JS/오디오가 없어도 동일한 원리를 텍스트 대체 설명으로 제공합니다.
-- **SEO / 공유** — `<title>`, meta description, Open Graph·Twitter 카드, JSON-LD 구조화 데이터.
+- **SEO / 공유** — `<title>`, meta description·keywords, Open Graph·Twitter 카드,
+  JSON-LD 구조화 데이터(WebSite + ProfilePage + Person), 과녁 아이콘 파비콘 세트.
 - **국문 기본, 필요한 곳에 영문 병기** (해외 연맹·스폰서 대응).
 
 ## 로컬 미리보기
@@ -67,10 +71,35 @@ python3 -m http.server 8000
 
 커스텀 도메인을 사용할 경우 루트에 `CNAME` 파일을 추가하고 Pages 설정에서 도메인을 지정합니다.
 
-## OG 이미지 갱신
+## OG 이미지 · 파비콘
 
-`og-image.png`는 공유 미리보기 카드입니다. 교체 시 **1200×630** 크기(PNG/JPG)를 유지하고
-파일명을 그대로 두면 `index.html`의 메타 태그를 수정할 필요가 없습니다.
+`og-image.png`(1200×630)와 파비콘(`favicon.svg` / `favicon-96.png` / `apple-touch-icon.png`)은
+모두 **같은 과녁 아이콘 디자인**입니다 — 흰 배경, 짙은 동심원 2개, 붉은 중심점(`#d24a34`).
+교체 시 크기와 파일명을 유지하면 `index.html` 메타 태그를 수정할 필요가 없습니다.
+OG 이미지를 교체하면 `index.html`의 `og:image` URL 쿼리(`?v=2`)를 올려
+카카오·페이스북 캐시를 무효화하세요. (카카오는
+<https://developers.kakao.com/tool/debugger/sharing> 에서 수동 캐시 초기화도 가능합니다.)
+
+## 검색엔진 등록 (필수)
+
+"청음사수 / 박성모 / 시각장애 사격" 검색 노출을 위해 **저장소 관리자가 1회 직접 등록**해야 합니다.
+특히 **네이버는 등록하지 않으면 사실상 수집되지 않습니다.**
+
+1. **구글 서치콘솔** — <https://search.google.com/search-console>
+   - `https://cheongeum-sasu.github.io/` 를 URL 접두어 속성으로 추가.
+   - HTML 태그 방식 선택 시 발급되는
+     `<meta name="google-site-verification" content="...">` 태그를 `index.html`의 `<head>`에 추가.
+   - 확인 후 **Sitemaps 메뉴에 `sitemap.xml` 제출**, "URL 검사 → 색인 생성 요청" 실행.
+2. **네이버 서치어드바이저** — <https://searchadvisor.naver.com/>
+   - 사이트 등록 후 발급되는
+     `<meta name="naver-site-verification" content="...">` 태그를 `<head>`에 추가.
+   - 소유 확인 후 **요청 → 사이트맵 제출**(`sitemap.xml`)과 **웹 페이지 수집 요청** 실행.
+3. (선택) **다음(Daum) 검색등록** — <https://register.search.daum.net/index.daum>
+
+등록 후 반영까지 보통 며칠~몇 주가 걸립니다. "청음사수"는 고유 명칭이라 색인만 되면
+상위 노출이 빠르지만, "시각장애"·"박성모" 같은 일반/동명이인 키워드는
+인스타그램·유튜브·언론 보도 등 **외부 링크가 이 사이트를 가리키게 하는 것**이 가장 효과적입니다.
+(인스타·유튜브 프로필에 사이트 주소를 걸어 두는 것부터 시작하세요.)
 
 ## 표기 원칙
 
